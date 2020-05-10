@@ -1,3 +1,15 @@
+.container {
+  width: 80%;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin create-mq($breakpoint) {
   @if ($breakpoint == 0) {
     @content;
