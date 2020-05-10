@@ -1,0 +1,40 @@
+@mixin create-mq($breakpoint) {
+  @if ($breakpoint == 0) {
+    @content;
+  } @else {
+    @media screen and (min-width: $breakpoint *1px) {
+      @content;
+    }
+  }
+}
+
+@mixin create-col-classes($modifier, $columns, $breakpoint) {
+  @include create-mq($breakpoint) {
+    @for $i from 1 through $columns {
+      .col-#{$modifier}-#{$i} {
+        flex-basis: (100 / ($columns / $i)) * 1%;
+        max-width: (100 / ($columns / $i)) * 1%;
+      }
+    }
+  }
+}
+
+@each $modifier, $breakpoint in $map-grid-props {
+  @include create-col-classes($modifier, $columns, $breakpoint);
+}
+
+[class*="col-"] {
+  margin-right: 16px;
+}
+
+.row {
+  *:last-child {
+    margin: 0;
+  }
+}
+
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  margin-right: 0;
+}
