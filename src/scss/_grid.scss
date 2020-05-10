@@ -23,6 +23,10 @@
 @mixin create-col-classes($modifier, $columns, $breakpoint) {
   @include create-mq($breakpoint) {
     @for $i from 1 through $columns {
+      .s-#{$modifier}-#{$i} {
+        margin-left: (100 / ($columns / $i)) * 1%;
+      }
+
       .col-#{$modifier}-#{$i} {
         flex-basis: (100 / ($columns / $i)) * 1%;
         max-width: (100 / ($columns / $i)) * 1%;
