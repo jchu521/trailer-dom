@@ -1,3 +1,15 @@
+.container {
+  width: 80%;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin create-mq($breakpoint) {
   @if ($breakpoint == 0) {
     @content;
@@ -11,6 +23,10 @@
 @mixin create-col-classes($modifier, $columns, $breakpoint) {
   @include create-mq($breakpoint) {
     @for $i from 1 through $columns {
+      .s-#{$modifier}-#{$i} {
+        margin-left: (100 / ($columns / $i)) * 1%;
+      }
+
       .col-#{$modifier}-#{$i} {
         flex-basis: (100 / ($columns / $i)) * 1%;
         max-width: (100 / ($columns / $i)) * 1%;

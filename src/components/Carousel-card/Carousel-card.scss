@@ -1,0 +1,19 @@
+.carousel-card {
+	display: flex;
+	flex-direction: column;
+	max-width: 185px;
+
+	.card-img {
+		max-width: 185px;
+	}
+	.card-title {
+	}
+	.sub-container {
+		display: flex;
+		justify-content: space-between;
+		.card-date {
+		}
+		.card-vote {
+		}
+	}
+}
