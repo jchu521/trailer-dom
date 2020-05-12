@@ -3,4 +3,10 @@
   width: 100%;
   color: white;
   height: 80px;
+
+  .row {
+    & > * {
+      margin: 0;
+    }
+  }
 }
