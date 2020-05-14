@@ -1,8 +1,8 @@
 module.exports = {
 	env: {
 		browser: true,
-		es6: true,
 		node: true,
+		es6: true,
 	},
 	extends: ["eslint:recommended", "plugin:react/recommended"],
 	globals: {
@@ -17,5 +17,8 @@ module.exports = {
 		sourceType: "module",
 	},
 	plugins: ["react"],
-	rules: {},
+	rules: {
+		// "linebreak-style": ["error", "unix"],
+		// semi: ["error", "always"],
+	},
 };

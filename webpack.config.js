@@ -7,7 +7,16 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader", "eslint-loader"],
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"],
+              plugins: ["@babel/plugin-transform-runtime"],
+            },
+          },
+          "eslint-loader",
+        ],
       },
       {
         test: /\.html$/,
@@ -35,6 +44,7 @@ module.exports = {
       },
     ],
   },
+  devtool: "inline-source-map",
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/index.html",

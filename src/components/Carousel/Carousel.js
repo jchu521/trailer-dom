@@ -5,7 +5,7 @@ import ItemsCarousel from "react-items-carousel";
 import CarouselCard from "../Carousel-card/Carousel-card";
 
 const baseEndPoint = process.env.END_POINT;
-const endPoint = `${baseEndPoint}/movie/338762?api_key=${process.env.MOVIEDB_API_KEY}`;
+const endPoint = `${baseEndPoint}/movie/popular?api_key=${process.env.MOVIEDB_API_KEY}`;
 
 function Carousel() {
 	const [movie, setMovie] = useState(null);
@@ -31,18 +31,24 @@ function Carousel() {
 				infiniteLoop={true}
 				requestToChangeActive={setActiveItemIndex}
 				activeItemIndex={activeItemIndex}
-				numberOfCards={3}
-				gutter={20}
+				numberOfCards={6}
+				gutter={5}
 				leftChevron={<button>{"<"}</button>}
 				rightChevron={<button>{">"}</button>}
 				outsideChevron
 				chevronWidth={chevronWidth}
 			>
-				<CarouselCard />
-				<CarouselCard />
-				<CarouselCard />
-				<CarouselCard />
-				<CarouselCard />
+				{movie &&
+					movie.results &&
+					movie.results.map((el) => (
+						<CarouselCard
+							key={el.id}
+							posterPath={el.poster_path}
+							releaseDate={el.release_date}
+							title={el.title}
+							voteAverage={el.vote_average}
+						/>
+					))}
 			</ItemsCarousel>
 		</div>
 	);

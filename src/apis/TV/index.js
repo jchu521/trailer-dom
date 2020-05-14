@@ -1,0 +1,1 @@
+import { tvInstance } from "../index";

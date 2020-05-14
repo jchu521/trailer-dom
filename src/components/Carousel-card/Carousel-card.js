@@ -1,14 +1,22 @@
 import React from "react";
 import "./Carousel-card.scss";
+import PropTypes from "prop-types";
 
 const basePosterUrl = process.env.POSTER_END_POINT_SMALL;
 
+CarouselCard.propTypes = {
+	posterPath: PropTypes.any,
+	voteAverage: PropTypes.any,
+	releaseDate: PropTypes.any,
+	title: PropTypes.any,
+};
+
 function CarouselCard(props) {
-	// const { posterPath, voteAverage, releaseDate, title } = props;
-	const title = "Bloodshot";
-	const releaseDate = "2020-01-20";
-	const voteAverage = "7.11";
-	const posterPath = "/8WUVHemHFH2ZIP6NWkwlHWsyrEL.jpg";
+	const { posterPath, voteAverage, releaseDate, title } = props;
+	// const title = "Bloodshot";
+	// const releaseDate = "2020-01-20";
+	// const voteAverage = "7.11";
+	// const posterPath = "/8WUVHemHFH2ZIP6NWkwlHWsyrEL.jpg";
 	const posterUrl = `${basePosterUrl}${posterPath}`;
 
 	return (
