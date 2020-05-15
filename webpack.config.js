@@ -15,6 +15,7 @@ module.exports = {
 							plugins: ["@babel/plugin-transform-runtime"],
 						},
 					},
+					"eslint-loader",
 				],
 			},
 			{

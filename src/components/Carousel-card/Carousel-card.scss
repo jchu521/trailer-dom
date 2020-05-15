@@ -9,19 +9,37 @@
 	.card-img {
 		max-width: 185px;
 		border-radius: 15px;
+		&:hover {
+			cursor: pointer;
+			filter: brightness(50%);
+		}
 	}
 	.card-title {
+		font-family: "Roboto", sans-serif;
+		font-size: 15px;
+		color: white;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		padding: 2px 2px;
 	}
 	.sub-container {
+		font-family: "Roboto", sans-serif;
+		font-size: 12px;
+		padding: 2px 2px;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		max-width: 185px;
 		.card-date {
+			color: grey;
 		}
 		.card-vote {
+			color: goldenrod;
+			font-weight: 700;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 		}
 	}
 }

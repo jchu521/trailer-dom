@@ -4,6 +4,7 @@ import axios from "axios";
 import ItemsCarousel from "react-items-carousel";
 import CarouselCard from "../Carousel-card/Carousel-card";
 import withWindowWidth from "../withWindowWidth/withWindowWidth";
+import { ChevronLeft, ChevronRight } from "../chevrons/chevrons";
 
 const baseEndPoint = process.env.END_POINT;
 const endPoint = `${baseEndPoint}/movie/popular?api_key=${process.env.MOVIEDB_API_KEY}`;
@@ -11,7 +12,7 @@ const endPoint = `${baseEndPoint}/movie/popular?api_key=${process.env.MOVIEDB_AP
 function Carousel({ width }) {
 	const [movie, setMovie] = useState(null);
 
-	const cardNumber = Math.ceil((width * 0.9 - 20) / (185 + 16));
+	const cardNumber = Math.ceil((width * 0.9 - 20) / (185 + 16)) - 1;
 	console.log(cardNumber);
 
 	useEffect(() => {
@@ -36,8 +37,8 @@ function Carousel({ width }) {
 				activeItemIndex={activeItemIndex}
 				numberOfCards={cardNumber}
 				gutter={8}
-				leftChevron={<button>{"<"}</button>}
-				rightChevron={<button>{">"}</button>}
+				leftChevron={<ChevronLeft />}
+				rightChevron={<ChevronRight />}
 				outsideChevron
 				chevronWidth={chevronWidth}
 			>
@@ -50,6 +51,7 @@ function Carousel({ width }) {
 							releaseDate={el.release_date}
 							title={el.title}
 							voteAverage={el.vote_average}
+							id={el.id}
 						/>
 					))}
 			</ItemsCarousel>
