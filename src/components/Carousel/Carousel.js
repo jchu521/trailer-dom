@@ -13,7 +13,6 @@ function Carousel({ width }) {
 	const [movie, setMovie] = useState(null);
 
 	const cardNumber = Math.ceil((width * 0.9 - 20) / (185 + 16)) - 1;
-	console.log(cardNumber);
 
 	useEffect(() => {
 		axios
@@ -21,7 +20,7 @@ function Carousel({ width }) {
 			.then((res) => {
 				if (res.status === 200) {
 					setMovie(res.data);
-					console.log(res.data);
+					// console.log(res.data);
 				}
 			})
 			.catch((err) => window.alert(err));
