@@ -2,6 +2,7 @@ import axios from "axios";
 
 const url = "https://api.themoviedb.org";
 const version = 3;
+const apiKey = process.env.MOVIEDB_API_KEY;
 
 const movieInstance = axios.create({
   baseURL: `${url}/${version}/movie/`,
@@ -13,4 +14,9 @@ const tvInstance = axios.create({
   timeout: 30000,
 });
 
-export { movieInstance, tvInstance };
+const searchInstance = axios.create({
+  baseURL: `${url}/${version}/search/`,
+  timeout: 30000,
+});
+
+export { movieInstance, tvInstance, searchInstance, apiKey };
