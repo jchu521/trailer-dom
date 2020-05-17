@@ -1,6 +1,14 @@
-@for $i from 1 to 12 {
+@for $i from 1 through 12 {
   .m-#{$i} {
     margin: 8px * $i !important;
+  }
+
+  .m-v-#{$i} {
+    margin: 8px * $i 0 !important;
+  }
+
+  .m-h-#{$i} {
+    margin: 0 8px * $i !important;
   }
 
   .m-t-#{$i} {
@@ -21,6 +29,14 @@
 
   .p-#{$i} {
     padding: 8px * $i !important;
+  }
+
+  .p-v-#{$i} {
+    padding: 8px * $i 0 !important;
+  }
+
+  .p-h-#{$i} {
+    padding: 0 8px * $i !important;
   }
 
   .p-t-#{$i} {
