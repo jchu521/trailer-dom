@@ -1,56 +1,56 @@
 .container {
-  width: 80%;
-  max-width: 1300px;
-  margin: auto;
+	width: 90%;
+	max-width: 1600px;
+	margin: auto;
 }
 
 .row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 @mixin create-mq($breakpoint) {
-  @if ($breakpoint == 0) {
-    @content;
-  } @else {
-    @media screen and (min-width: $breakpoint *1px) {
-      @content;
-    }
-  }
+	@if ($breakpoint == 0) {
+		@content;
+	} @else {
+		@media screen and (min-width: $breakpoint *1px) {
+			@content;
+		}
+	}
 }
 
 @mixin create-col-classes($modifier, $columns, $breakpoint) {
-  @include create-mq($breakpoint) {
-    @for $i from 1 through $columns {
-      .s-#{$modifier}-#{$i} {
-        margin-left: (100 / ($columns / $i)) * 1%;
-      }
+	@include create-mq($breakpoint) {
+		@for $i from 1 through $columns {
+			.s-#{$modifier}-#{$i} {
+				margin-left: (100 / ($columns / $i)) * 1%;
+			}
 
-      .col-#{$modifier}-#{$i} {
-        flex-basis: (100 / ($columns / $i)) * 1%;
-        max-width: (100 / ($columns / $i)) * 1%;
-      }
-    }
-  }
+			.col-#{$modifier}-#{$i} {
+				flex-basis: (100 / ($columns / $i)) * 1%;
+				max-width: (100 / ($columns / $i)) * 1%;
+			}
+		}
+	}
 }
 
 @each $modifier, $breakpoint in $map-grid-props {
-  @include create-col-classes($modifier, $columns, $breakpoint);
+	@include create-col-classes($modifier, $columns, $breakpoint);
 }
 
 [class*="col-"] {
-  margin-right: 16px;
+	margin-right: 16px;
 }
 
 .row {
-  *:last-child {
-    margin: 0;
-  }
+	*:last-child {
+		margin: 0;
+	}
 }
 
 .col-sm-12,
 .col-md-12,
 .col-lg-12 {
-  margin-right: 0;
+	margin-right: 0;
 }

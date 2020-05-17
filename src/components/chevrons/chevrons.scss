@@ -1,0 +1,24 @@
+@mixin chevron-style {
+	color: white;
+	position: relative;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, 0.5);
+
+	&:hover {
+		transform: scale(1.5);
+	}
+}
+
+.chev-left {
+	@include chevron-style;
+	left: 100%;
+}
+
+.chev-right {
+	@include chevron-style;
+	left: -100%;
+}
