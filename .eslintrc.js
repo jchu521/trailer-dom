@@ -20,5 +20,7 @@ module.exports = {
   rules: {
     "linebreak-style": ["error", "unix"],
     semi: ["error", "always"],
+    "react/prop-types": 0,
+    indent: ["error", 2, { SwitchCase: 1 }],
   },
 };
