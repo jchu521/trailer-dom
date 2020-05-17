@@ -1,29 +1,24 @@
 import React, { useState, useEffect } from "react";
-import "./Carousel.scss";
-import axios from "axios";
 import ItemsCarousel from "react-items-carousel";
 import CarouselCard from "../Carousel-card/Carousel-card";
 import withWindowWidth from "../withWindowWidth/withWindowWidth";
 import { ChevronLeft, ChevronRight } from "../chevrons/chevrons";
-
-const baseEndPoint = process.env.END_POINT;
-const endPoint = `${baseEndPoint}/movie/popular?api_key=${process.env.MOVIEDB_API_KEY}`;
+import { getPopularAPI } from "../../apis/Movies/index";
+import "./Carousel.scss";
 
 function Carousel({ width }) {
 	const [movie, setMovie] = useState(null);
 
+	// Calculate the card number needed
 	const cardNumber = Math.ceil((width * 0.9 - 20) / (185 + 16)) - 1;
 
+	const fetchPopularMovie = async () => {
+		let result = await getPopularAPI();
+		setMovie(result);
+	};
+
 	useEffect(() => {
-		axios
-			.get(endPoint)
-			.then((res) => {
-				if (res.status === 200) {
-					setMovie(res.data);
-					// console.log(res.data);
-				}
-			})
-			.catch((err) => window.alert(err));
+		fetchPopularMovie();
 	}, []);
 
 	const [activeItemIndex, setActiveItemIndex] = useState(0);

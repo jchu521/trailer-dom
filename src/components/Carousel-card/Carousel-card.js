@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "./Carousel-card.scss";
 import StarRateIcon from "@material-ui/icons/StarRate";
 import Tooltip from "@material-ui/core/Tooltip";
 import { getMovieDetailAPI } from "../../apis/Movies/index";
 import Modal from "../modal/modal";
+import "./Carousel-card.scss";
 
 const basePosterUrl = process.env.POSTER_END_POINT_SMALL;
-
-// CarouselCard.propTypes = {
-// 	posterPath: PropTypes.any,
-// 	voteAverage: PropTypes.any,
-// 	releaseDate: PropTypes.any,
-// 	title: PropTypes.any,
-// };
 
 function CarouselCard({ posterPath, voteAverage, releaseDate, title, id }) {
 	const [movieDetail, setMovieDetail] = useState(null);
@@ -26,21 +19,16 @@ function CarouselCard({ posterPath, voteAverage, releaseDate, title, id }) {
 	useEffect(() => {
 		fetchMovieDetail();
 	}, []);
-	// useEffect(() => {
-	// 	console.log(movieDetail);
-	// }, [movieDetail]);
 
 	const handleClick = () => {
 		setModalShow(!modalShow);
 	};
 
-	const posterUrl = `${basePosterUrl}${posterPath}`;
-
 	return (
 		<div className="carousel-card">
 			<Tooltip title={title} placement="top">
 				<img
-					src={posterUrl}
+					src={`${basePosterUrl}${posterPath}`}
 					alt="poster"
 					className="card-img"
 					onClick={() => setModalShow(!modalShow)}

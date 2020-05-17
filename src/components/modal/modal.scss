@@ -24,6 +24,8 @@
 		border-radius: 15px;
 		padding: 15px 15px;
 		overflow: scroll;
+		display: flex;
+		flex-direction: column;
 	}
 	.close-modal {
 		position: absolute;
@@ -32,4 +34,20 @@
 
 		cursor: pointer;
 	}
+}
+
+.brief-section {
+	display: flex;
+	flex-direction: row;
+}
+.title-poster-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.brief-info {
+}
+.overview {
+}
+.actors {
 }
