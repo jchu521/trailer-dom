@@ -5,8 +5,6 @@ import { getMovieDetailAPI } from "../../apis/Movies/index";
 import Modal from "../modal/modal";
 import "./Carousel-card.scss";
 
-const basePosterUrl = process.env.POSTER_END_POINT_SMALL;
-
 function CarouselCard({ posterPath, voteAverage, releaseDate, title, id }) {
 	const [movieDetail, setMovieDetail] = useState(null);
 	const [modalShow, setModalShow] = useState(false);
@@ -28,7 +26,7 @@ function CarouselCard({ posterPath, voteAverage, releaseDate, title, id }) {
 		<div className="carousel-card">
 			<Tooltip title={title} placement="top">
 				<img
-					src={`${basePosterUrl}${posterPath}`}
+					src={`${process.env.POSTER_END_POINT_SMALL}${posterPath}`}
 					alt="poster"
 					className="card-img"
 					onClick={() => setModalShow(!modalShow)}
