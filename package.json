@@ -39,6 +39,7 @@
     "@material-ui/icons": "^4.9.1",
     "autoprefixer": "^9.7.6",
     "axios": "^0.19.2",
+    "lodash": "^4.17.15",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-items-carousel": "^2.8.0",
