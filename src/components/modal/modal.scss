@@ -4,7 +4,7 @@
 	background-color: rgba(0, 0, 0, 0.5);
 
 	z-index: 100;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 
@@ -13,13 +13,13 @@
 	align-items: center;
 
 	.modal-box {
-		position: absolute;
+		position: fixed;
 		width: 80%;
 		height: 80%;
 		left: 10%;
 		top: 10%;
 		background: white;
-		filter: brightness(150%);
+
 		z-index: 105;
 		border-radius: 15px;
 		padding: 15px 15px;
@@ -31,23 +31,8 @@
 		position: absolute;
 		right: -2px;
 		top: -2px;
+		border: none;
 
 		cursor: pointer;
 	}
-}
-
-.brief-section {
-	display: flex;
-	flex-direction: row;
-}
-.title-poster-container {
-	display: flex;
-	flex-direction: column;
-}
-
-.brief-info {
-}
-.overview {
-}
-.actors {
 }

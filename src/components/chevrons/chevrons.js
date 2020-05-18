@@ -1,7 +1,7 @@
 import React from "react";
-import "./chevrons.scss";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import "./chevrons.scss";
 
 export const ChevronLeft = () => {
 	return (
