@@ -1,2 +1,29 @@
 .searchbar {
+  &-input {
+    &-wrapper {
+      background-color: white;
+      border-radius: 15px;
+      border-width: 2px;
+    }
+    &-button {
+      background-color: orange;
+      outline: none;
+      border-width: 0px;
+      height: 30px;
+    }
+
+    &-icon {
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      background-color: orange;
+      height: 30px !important;
+    }
+
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-width: 0px;
+    height: 30px;
+    width: 150px;
+    outline: none;
+  }
 }
