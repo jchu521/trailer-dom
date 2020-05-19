@@ -10,7 +10,8 @@ function Carousel({ width }) {
 	const [movie, setMovie] = useState(null);
 
 	// Calculate the card number needed
-	const cardNumber = Math.ceil((width * 0.9 - 20) / (185 + 16)) - 1;
+	const cardNumber =
+		width <= 360 ? 2 : Math.ceil((width * 0.9) / (185 + 16)) - 1;
 
 	const fetchPopularMovie = async () => {
 		let result = await getPopularAPI();

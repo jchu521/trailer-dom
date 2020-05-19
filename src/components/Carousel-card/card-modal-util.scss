@@ -1,7 +1,12 @@
-.brief-section {
-	justify-content: flex-start;
+.outter-container {
+	width: 100%;
+	flex-direction: column;
+	align-items: flex-start !important;
 }
-.title-poster-container {
+.brief-section {
+	flex-direction: column;
+}
+.poster-container {
 }
 
 .brief-info {
