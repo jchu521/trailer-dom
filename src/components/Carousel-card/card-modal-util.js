@@ -1,11 +1,16 @@
 import React from "react";
 import "./card-modal-util.scss";
+import MovieCrew from "./movie-crew-util";
+import MovieCast from "./movie-cast-util";
 
 function CardModal({ movieDetail, movieCredit }) {
 	if (!movieCredit || !movieDetail) {
 		return null;
 	}
-	console.log(movieDetail);
+
+	// console.log(movieDetail);
+	console.log(movieCredit);
+	const { cast, crew } = movieCredit;
 	return (
 		<div className="outter-container row">
 			<div className="col-sm-12 brief-section">
@@ -29,11 +34,16 @@ function CardModal({ movieDetail, movieCredit }) {
 							))}
 						</div>
 						<div className="tagline row">{movieDetail.tagline}</div>
+						<div className="crew-info">
+							<MovieCrew crew={crew} />
+						</div>
 					</div>
 				</div>
 			</div>
 			<p className="overview row">{movieDetail.overview}</p>
-			<div className="actors row"></div>
+			<div className="actors row">
+				<MovieCast cast={cast} />
+			</div>
 		</div>
 	);
 }
