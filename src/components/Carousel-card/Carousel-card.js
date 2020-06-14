@@ -50,11 +50,7 @@ function CarouselCard({ posterPath, voteAverage, releaseDate, title, id }) {
 				</span>
 			</div>
 
-			<Modal
-				detail={movieDetail}
-				modalClose={handleModalClose}
-				show={modalShow}
-			>
+			<Modal modalClose={handleModalClose} show={modalShow}>
 				<CardModal movieDetail={movieDetail} movieCredit={movieCredit} />
 			</Modal>
 		</div>

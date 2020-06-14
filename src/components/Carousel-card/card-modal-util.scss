@@ -6,12 +6,35 @@
 .brief-section {
 	flex-direction: column;
 }
+.movie-title-bold {
+	font-weight: 700;
+	font-size: 35.2px;
+	font-family: "Source Sans Pro", Arial, sans-serif;
+}
 .poster-container {
 }
-
+.tagline {
+	justify-content: flex-start !important;
+}
 .brief-info {
 }
 .overview {
+	justify-content: flex-start;
 }
 .actors {
+	overflow-y: hidden;
+	overflow-x: scroll;
+	width: 90%;
+	padding: 2px;
+	height: 300px;
+	justify-content: flex-start !important;
+}
+.genres {
+	justify-content: flex-start !important;
+}
+.genres-tag {
+	padding: 2px;
+	border-radius: 5px;
+	border: 1px solid orangered;
+	margin: 2px;
 }

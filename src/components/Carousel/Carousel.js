@@ -4,6 +4,7 @@ import CarouselCard from "../Carousel-card/Carousel-card";
 import withWindowWidth from "../withWindowWidth/withWindowWidth";
 import { ChevronLeft, ChevronRight } from "../chevrons/chevrons";
 import { getPopularAPI } from "../../apis/Movies/index";
+import { connect } from "react-redux";
 import "./Carousel.scss";
 
 function Carousel({ width }) {
@@ -54,4 +55,19 @@ function Carousel({ width }) {
 	);
 }
 
-export default withWindowWidth(Carousel);
+const mapStateToProps = (state) => {
+	return {
+		movie: state.movie,
+	};
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		fetchPopularMovie: () => dispatch(fetchPopularMovie),
+	};
+};
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(withWindowWidth(Carousel));

@@ -8,13 +8,12 @@ function CardModal({ movieDetail, movieCredit }) {
 		return null;
 	}
 
-	// console.log(movieDetail);
 	console.log(movieCredit);
 	const { cast, crew } = movieCredit;
 	return (
 		<div className="outter-container row">
 			<div className="col-sm-12 brief-section">
-				<span className="col-sm-12">
+				<span className="col-sm-12 movie-title-bold">
 					{movieDetail.title}({movieDetail.release_date})
 				</span>
 				<div className="row poster-info-container">
@@ -30,7 +29,9 @@ function CardModal({ movieDetail, movieCredit }) {
 					<div className="brief-info col-sm-6">
 						<div className="genres row">
 							{movieDetail.genres.map((el, index) => (
-								<span key={index}>{el.name}</span>
+								<span key={index} className="genres-tag">
+									{el.name}
+								</span>
 							))}
 						</div>
 						<div className="tagline row">{movieDetail.tagline}</div>
